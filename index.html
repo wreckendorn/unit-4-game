@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crystal Game</title>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- Added link to the jQuery library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
+
+</head>
+<body>
+
+    <div class="jumbotron">
+  
+      <h1 class="text-center">Match this Number:</h1>
+      <h1 class="text-center" id="random-number"></h1>
+      <h1 class="text-center">Total: </h1>
+      <h1 class="text-center" id="total-score"></h1>
+  
+      <div class="text-center">
+        <div class="crystals" id="crystal-number-1">
+            <img src="assets/images/crystal1.jpg" alt="Crystal 1 icon" style="width:100px;height:100px;">
+        </div>
+        <div class="crystals" id="crystal-number-2">
+           <img src="assets/images/crystal1.jpg" alt="Crystal 2 icon" style="width:100px;height:100px;">
+        </div>
+        <div class="crystals" id="crystal-number-3">
+            <img src="assets/images/crystal1.jpg" alt="Crystal 3 icon" style="width:100px;height:100px;">
+        </div>
+        <div class="crystals" id="crystal-number-4">
+            <img src="assets/images/crystal1.jpg" alt="Crystal 4 icon" style="width:100px;height:100px;">
+        </div>
+
+      </div>
+  
+    </div>
+  
+    <!-- Here we have div called "randomNumber" where our random number will go -->
+
+
+    <script src="assets/javascript/game.js"></script>
+</body>
+</html>
