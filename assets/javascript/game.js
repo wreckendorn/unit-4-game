@@ -15,7 +15,16 @@ function for resetting totalScore, new matchNumber, and crystal(s)number
 main function waits for window to load, then calls resetscore function, then randomCrystalNumber function, then random matchNumber function.
 setup a loop that allows user to continue clicking on crystals (if score is less, call this function)(if score is more, call this function)(if score is the same, call this function)*/
 //function for generating random number between 10 and 100.
+var totalScore = 0;
+var matchThisNumber = numberToMatch();
+// call function to genereate random for all four crystals
+var crystalNumber1 = crystalNumberGen();
 
+var crystalNumber2 = crystalNumberGen();
+
+var crystalNumber3 = crystalNumberGen();
+
+var crystalNumber4 = crystalNumberGen();
 
 function numberToMatch() {
     // ... we generate a random number
@@ -27,6 +36,7 @@ function numberToMatch() {
 
 function crystalNumberGen() {
     var random = Math.floor(Math.random() * 12) + 1;
+    return random;
 }
 
 function reset() {
@@ -34,37 +44,30 @@ function reset() {
         matchThisNumber = 0;
 }
 
-function addScore(crystalChosen, scoreSoFar) {
-    totalScore = scoreSoFar + crystalChosen;
+function addScore(crystalChosen) {
+    totalScore = totalScore + crystalChosen;
     $("#total-score").text(totalScore);
 }
 
 $(document).ready(function() {
-          var totalScore = 0;
-         $("#total-score").text(totalScore);
+          
+    $("#total-score").text(totalScore);
 // call function to generate number user will need to match
-        var matchThisNumber = numberToMatch();
-// call function to genereate random for all four crystals
-        var crystalNumber1 = crystalNumberGen();
-
-        var crystalNumber2 = crystalNumberGen();
-
-        var crystalNumber3 = crystalNumberGen();
-
-        var crystalNumber4 = crystalNumberGen();
+        
 
     $("#crystal-number-1").on("click", function() {
-        addScore(crystalNumber1, totalScore);
+        addScore(crystalNumber1);
     });
 
-    $(".jumbotron").on("click", "#crystal-number-2", function() {
-        totalScore = totalScore + crystalNumber2;
-        $("#total-score").text(totalScore);
-    });
-    $(".jumbotron").on("click", "#crystal-number-3", function() {
+    $("#crystal-number-2").on("click", function() {
+        addScore(crystalNumber2);
+    });  
+
+    $("#crystal-number-3").on("click", function() {
         addScore(crystalNumber3);
     });
-    $(".jumbotron").on("click", "#crystal-number-4", function() {
+
+    $("#crystal-number-4").on("click", function() {
         addScore(crystalNumber4);
     });
 
