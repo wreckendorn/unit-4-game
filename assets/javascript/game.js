@@ -16,7 +16,9 @@ main function waits for window to load, then calls resetscore function, then ran
 setup a loop that allows user to continue clicking on crystals (if score is less, call this function)(if score is more, call this function)(if score is the same, call this function)*/
 //function for generating random number between 10 and 100.
 var totalScore = 0;
-var matchThisNumber = numberToMatch();
+var gamesLost = 0;
+var gamesWon = 0;
+var matchThisNumber = 0;
 // call function to genereate random for all four crystals
 var crystalNumber1 = crystalNumberGen();
 
@@ -28,9 +30,8 @@ var crystalNumber4 = crystalNumberGen();
 
 function numberToMatch() {
     // ... we generate a random number
-    var random = Math.floor(Math.random() * (100 - 19)) + 19;
+    var random = Math.floor(Math.random() * (81)) + 19;
     // ... and then dump the random number into our random-number div.
-    $("#random-number").text(random);
     return random;
   }
 
@@ -41,20 +42,43 @@ function crystalNumberGen() {
 
 function reset() {
         totalScore = 0;
-        matchThisNumber = 0;
+        matchThisNumber = numberToMatch();
+        crystalNumber1 = crystalNumberGen();
+        crystalNumber2 = crystalNumberGen();
+        crystalNumber3 = crystalNumberGen();
+        crystalNumber4 = crystalNumberGen();
+        $("#total-score").text(totalScore);
+        console.log("Total Score is " + totalScore);
+        console.log("Crystal 1 is " + crystalNumber1);
+        console.log("Crystal 2 is " + crystalNumber2);
+        console.log("Crystal 3 is " + crystalNumber3);
+        console.log("Crystal 4 is " + crystalNumber4);
+        $("#random-number").text(matchThisNumber);
+        console.log("The number to match is " + matchThisNumber);
+        return
 }
 
 function addScore(crystalChosen) {
     totalScore = totalScore + crystalChosen;
     $("#total-score").text(totalScore);
+    checkScore();
 }
 
-$(document).ready(function() {
-          
-    $("#total-score").text(totalScore);
-// call function to generate number user will need to match
-        
+function checkScore() {
 
+    if (totalScore > matchThisNumber) {
+        gamesLost = gamesLost + 1;
+        $("#gamesLostCounter").text(gamesLost);
+        reset();
+    }
+    if (totalScore === matchThisNumber) {
+        gamesWon = gamesWon + 1;
+        $("#gamesWonCounter").text(gamesWon);
+        reset();
+    }
+}
+
+function listenForCrystal() {
     $("#crystal-number-1").on("click", function() {
         addScore(crystalNumber1);
     });
@@ -70,19 +94,17 @@ $(document).ready(function() {
     $("#crystal-number-4").on("click", function() {
         addScore(crystalNumber4);
     });
+}
 
-/*    if (totalScore < matchThisNumber) {
-//add crystalChosen number to totalScore
-    }
-    else if(totalScore > matchThisNumber) {
-        gamesLost = gamesLost - 1;
-//update Losses div with new gamesLost number
-    }
-    else {
-//update Wins div with new gamesWon number
-        gamesWon = gamesWon + 1;
-    }*/
 
-      });
-    
+  
+    $(document).keyup(function() {
+        reset();
+        listenForCrystal();
+
+// call function to generate number user will need to match
+
+    });
+
+
 
