@@ -95,8 +95,6 @@ function listenForCrystal() {
         addScore(crystalNumber4);
     });
 }
-
-
   
     $(document).keyup(function() {
         reset();

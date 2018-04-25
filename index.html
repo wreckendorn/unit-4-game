@@ -13,44 +13,53 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
 
 </head>
-<body>
-
+<body class="bg-dark">
+    <div class="jumbotron bg-primary text-white">
+            <h1 class="text-center">Crystal Clarity</h1>
+    </div>
     <div class="jumbotron">
-  
       <h1 class="text-center">Match this Number:</h1>
       <h1 class="text-center" id="random-number"></h1>
       <h1 class="text-center">Total: </h1>
       <h1 class="text-center" id="total-score"></h1>
-  
-      <div class="text-center">
-        <div class="crystals" id="crystal-number-1">
-            <img src="assets/images/crystal1.jpg" alt="Crystal 1 icon" style="width:100px;height:100px;">
-        </div>
-        <div class="crystals" id="crystal-number-2">
-           <img src="assets/images/crystal1.jpg" alt="Crystal 2 icon" style="width:100px;height:100px;">
-        </div>
-        <div class="crystals" id="crystal-number-3">
-            <img src="assets/images/crystal1.jpg" alt="Crystal 3 icon" style="width:100px;height:100px;">
-        </div>
-        <div class="crystals" id="crystal-number-4">
-            <img src="assets/images/crystal1.jpg" alt="Crystal 4 icon" style="width:100px;height:100px;">
-        </div>
-        <div id="gamesWonDisplay">
-            <h1 class="text-center">Games Won: </h1>
-            <h1 class="text-center" id="gamesWonCounter"></h1>
-        </div>
-        <div id="gamesLostDisplay">
-            <h1 class="text-center">Games Lost: </h1>
-            <h1 class="text-center" id="gamesLostCounter"></h1>
-        </div>
-
-      </div>
-  
     </div>
+  <div class="container">
+    <div class="row">
+            <div class="crystals col-sm-2" id="crystal-number-1">
+                <img src="assets/images/crystal1.png" alt="Crystal 1 icon" style="width:200px;height:200px;">
+            </div>
+
+            <div class="col-sm-1"></div>
+
+            <div class="crystals col-sm-2" id="crystal-number-2">
+                <img src="assets/images/crystal2.png" alt="Crystal 2 icon" style="width:200px;height:200px;">
+            </div>
+
+            <div class="col-sm-1"></div>
+
+            <div class="crystals col-sm-2" id="crystal-number-3">
+                <img src="assets/images/crystal3.png" alt="Crystal 3 icon" style="width:200px;height:200px;">
+            </div>
+
+            <div class="col-sm-1"></div>
+
+            <div class="crystals col-sm-2" id="crystal-number-4">
+                <img src="assets/images/crystal4.png" alt="Crystal 4 icon" style="width:200px;height:200px;">
+            </div>
+        
+    </div>
+                <h1 class="text-white">Games Won: </h1>
+                <h1 class="text-white" id="gamesWonCounter"></h1>
+                <h1 class="text-right text-white">Games Lost: </h1>
+                <h1 class="text-right text-white" id="gamesLostCounter"></h1>
+
+    </div>
+
   
     <!-- Here we have div called "randomNumber" where our random number will go -->
-
-
+    <audio autoplay>
+            <source src= "assets/sounds/backgroundAudio.mp3" type="audio/mpeg">
+          </audio>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
