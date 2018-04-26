@@ -19,6 +19,7 @@ var totalScore = 0;
 var gamesLost = 0;
 var gamesWon = 0;
 var matchThisNumber = 0;
+
 // call function to genereate random for all four crystals
 var crystalNumber1 = crystalNumberGen();
 

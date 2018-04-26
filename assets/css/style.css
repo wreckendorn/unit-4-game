@@ -1,0 +1,45 @@
+
+body, html {
+    height: 100%;
+}
+.bg { 
+
+    background-image: url("../images/backgroundImage.jpg");
+    background-size: cover;
+} 
+
+.bg1 { 
+    /* The image used */
+    background-image: url("../images/navBarImage.jpg");
+
+    /* Half height */
+    height: 50%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg2 {
+    background-color: black;
+}
+
+.outline-text {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#crystal1-change:hover {
+        background: url("../images/crystal1.png") no-repeat;
+        width:200px;
+        height:200px;
+    }
+
+#mainTitle {
+    font-size: 100px;
+}
+
+.mySpecialFont {
+    font-family: 'Amatic SC', cursive;
+}

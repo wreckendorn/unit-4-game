@@ -7,53 +7,92 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- Added link to the jQuery library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">  
-
+<script>
+    var crystal1Sound = new Audio();
+    crystal1Sound.src = "assets/sounds/Pop.mp3";
+</script>>
+</style>
 </head>
-<body class="bg-dark">
-    <div class="jumbotron bg-primary text-white">
-            <h1 class="text-center">Crystal Clarity</h1>
-    </div>
-    <div class="jumbotron">
-      <h1 class="text-center">Match this Number:</h1>
-      <h1 class="text-center" id="random-number"></h1>
-      <h1 class="text-center">Total: </h1>
-      <h1 class="text-center" id="total-score"></h1>
-    </div>
-  <div class="container">
+<body class="bg2">
+    
+<div class="container">
+        <div class="row mb-0 pb-0">
+            <div class="jumbotron col-12 bg1 outline-text">
+                <h1 class="text-center mySpecialFont" id="mainTitle">Crystal Clarity</h1>
+            </div>
+        </div>
+        <div class="row mt-0">
+                
+                    <div class="col-6">
+                        <ul class="nav text-white">
+                            <li>Games Lost: </li>
+                            <li id="gamesLostCounter"></li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="nav text-white justify-content-end">
+                            <li class="text-right">Games Won: </li>
+                            <li id="gamesWonCounter"></li>
+                        </ul>
+                    </div>
+               
+        </div>
+
+        <div class="row">
+            <div class="col-4"></div>
+
+            <div class="jumbotron col-md-4 col-sm-12">
+                <h2 class="text-center display-6 mySpecialFont">Match this Number:</h2>
+                <hr class="my-1 bg">
+                <h1 class="text-center" id="random-number"></h1>
+            </div>
+
+            <div class="col-4"></div>
+
+            
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12"></div>
+            <div class="jumbotron col-md-2 col-sm-12 bg outline-text">
+                <h2 class="text-center mySpecialFont">Your Total:</h2>
+                <h1 class="text-center" id="total-score"></h1>
+            </div>
+            <div class="col-md-5 col-sm-12"></div>
+        </div>
+
     <div class="row">
             <div class="crystals col-sm-2" id="crystal-number-1">
-                <img src="assets/images/crystal1.png" alt="Crystal 1 icon" style="width:200px;height:200px;">
+                <img src="assets/images/crystal1off.png" alt="Crystal 1 icon" onmousedown="crystal1Sound.play()" style="width:200px;height:200px;">
             </div>
 
             <div class="col-sm-1"></div>
 
             <div class="crystals col-sm-2" id="crystal-number-2">
-                <img src="assets/images/crystal2.png" alt="Crystal 2 icon" style="width:200px;height:200px;">
+                <img src="assets/images/crystal2off.png" alt="Crystal 2 icon" onmousedown="crystal1Sound.play()" style="width:200px;height:200px;">
             </div>
 
             <div class="col-sm-1"></div>
 
             <div class="crystals col-sm-2" id="crystal-number-3">
-                <img src="assets/images/crystal3.png" alt="Crystal 3 icon" style="width:200px;height:200px;">
+                <img src="assets/images/crystal3off.png" alt="Crystal 3 icon" onmousedown="crystal1Sound.play()" style="width:200px;height:200px;">
             </div>
 
             <div class="col-sm-1"></div>
 
             <div class="crystals col-sm-2" id="crystal-number-4">
-                <img src="assets/images/crystal4.png" alt="Crystal 4 icon" style="width:200px;height:200px;">
+                <img src="assets/images/crystal4off.png" alt="Crystal 4 icon" onmousedown="crystal1Sound.play()" style="width:200px;height:200px;">
             </div>
         
     </div>
-                <h1 class="text-white">Games Won: </h1>
-                <h1 class="text-white" id="gamesWonCounter"></h1>
-                <h1 class="text-right text-white">Games Lost: </h1>
-                <h1 class="text-right text-white" id="gamesLostCounter"></h1>
-
-    </div>
+    
+</div>
 
   
     <!-- Here we have div called "randomNumber" where our random number will go -->
