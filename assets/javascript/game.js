@@ -96,7 +96,9 @@ function listenForCrystal() {
         addScore(crystalNumber4);
     });
 }
-  
+
+
+    $("#random-number").text("Press any key to start the game.");
     $(document).keyup(function() {
         reset();
         listenForCrystal();
