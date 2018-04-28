@@ -29,18 +29,19 @@ var crystalNumber3 = crystalNumberGen();
 
 var crystalNumber4 = crystalNumberGen();
 
+//function for generating a random number between 19 and 1000
 function numberToMatch() {
-    // ... we generate a random number
     var random = Math.floor(Math.random() * (81)) + 19;
-    // ... and then dump the random number into our random-number div.
     return random;
   }
 
+//function for generating a random number between 1 and 12
 function crystalNumberGen() {
     var random = Math.floor(Math.random() * 12) + 1;
     return random;
 }
 
+//functiomn for resetting the game after a win or loss
 function reset() {
         totalScore = 0;
         matchThisNumber = numberToMatch();
@@ -59,12 +60,15 @@ function reset() {
         return
 }
 
+//when a crystal is clicked, this function will add the value of that crystal to the total and display the new total
 function addScore(crystalChosen) {
     totalScore = totalScore + crystalChosen;
     $("#total-score").text(totalScore);
     checkScore();
 }
 
+//after the total score is updated, this function will check to see if it matches the number to hit, or if it goes over/under.  If it's over or matches, 
+//it will trigger the reset function,  else the game continues.
 function checkScore() {
 
     if (totalScore > matchThisNumber) {
@@ -79,6 +83,7 @@ function checkScore() {
     }
 }
 
+//this function listens for the crystals to be licked on and then runs that number through the addscore function
 function listenForCrystal() {
     $("#crystal-number-1").on("click", function() {
         addScore(crystalNumber1);
@@ -97,13 +102,13 @@ function listenForCrystal() {
     });
 }
 
-
+//program starts and waits for the user to press a key.  once they do, it triggers the reset function and then the listen for crystal function
     $("#random-number").text("Press any key to start the game.");
     $(document).keyup(function() {
         reset();
         listenForCrystal();
 
-// call function to generate number user will need to match
+
 
     });
 
